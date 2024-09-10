@@ -1,10 +1,34 @@
 ---
+import Experience from '../sections/Experience.astro'
 import Layout from '../layouts/Layout.astro'
+import Hero from '../sections/Hero.astro'
+import SectionContainer from '../components/SectionContainer.astro'
+import BriefCase from '../icons/BriefCase.astro'
+import Code from '../icons/Code.astro'
+import Projects from '../sections/Projects.astro'
 ---
 
 <Layout
   title='Porfolio de Fabián Hoyos - Desarrollador y Programador Web'
   description='Me gustaria trabajar contigo desarrollado tus ideas de negocio. Cuentame en que te puedo ayudar'
 >
-  <main></main>
+  <main class='px-4'>
+    <SectionContainer class='py-44 pb-24'>
+      <Hero />
+    </SectionContainer>
+    <SectionContainer id='experiencia' class='pb-24'>
+      <h2 class='text-2xl font-semibold mb-6 flex gap-x-3 items-center'>
+        <BriefCase class='size-7' />
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+    <SectionContainer>
+      <h2 class='text-2xl font-semibold mb-6 flex gap-x-3 items-center'>
+        <Code class='size-8' />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
 </Layout>

@@ -1,0 +1,111 @@
+---
+import React from '../icons/React.astro'
+import MongoDB from '../icons/MongoDB.astro'
+import NodeJS from '../icons/NodeJs.astro'
+import Flutter from '../icons/Flutter.astro'
+import Firebase from '../icons/Firebase.astro'
+import NextJS from '../icons/NextJS.astro'
+import Tailwind from '../icons/Tailwind.astro'
+
+interface Props {
+  title: string
+  description: string
+  link?: string
+  github?: string
+  image?: string
+}
+
+const TAGS = {
+  REACT: {
+    name: 'ReactJS',
+    class: 'bg-[#20232A] text-white',
+    icon: React
+  },
+  MONGODB: {
+    name: 'MongoDB',
+    class: 'bg-[#00684a] text-white',
+    icon: MongoDB
+  },
+  NODEJS: {
+    name: 'NodeJS',
+    class: 'bg-[#336633] text-white',
+    icon: NodeJS
+  },
+  FLUTTER: {
+    name: 'Flutter',
+    class: 'bg-[#042B59] text-white',
+    icon: Flutter
+  },
+  FIREBASE: {
+    name: 'Firebase',
+    class: 'bg-[#ABABAB] text-white',
+    icon: Firebase
+  },
+  NEXTJS: {
+    name: 'NextJS',
+    class: 'bg-[#000000] text-white',
+    icon: NextJS
+  },
+  TAILWIND: {
+    name: 'Tailwind',
+    class: 'bg-[#1C2538] text-white',
+    icon: Tailwind
+  }
+}
+
+const PROJECTS = [
+  {
+    title: 'DevTracker - A Project Management Tool',
+    description:
+      'Aplicación de gestión de proyectos diseñada para equipos de desarrollo. Permite la creación de tareas, asignación de miembros y seguimiento del progreso. Desarrollado con React, Node.js y MongoDB.',
+    link: '#',
+    github: '#',
+    image: '/projects/svgl.webp',
+    tags: [TAGS.REACT, TAGS.NODEJS, TAGS.MONGODB]
+  },
+  {
+    title: 'Budgeter - Financial Tracking App',
+    description:
+      'Aplicación para la gestión de presupuestos personales. Permite a los usuarios registrar ingresos y gastos, y proporciona análisis financieros en tiempo real. Creado con Flutter y Firebase.',
+    link: '#',
+    github: '#',
+    image: '/projects/svgl.webp',
+    tags: [TAGS.FLUTTER, TAGS.FIREBASE]
+  },
+  {
+    title: 'CodeSnippets - Repositorio de Snippets de Código',
+    description:
+      'Plataforma donde los desarrolladores pueden compartir y guardar fragmentos de código en varios lenguajes. Incluye búsqueda avanzada y categorización por tags. Construido con Next.js y Tailwind CSS.',
+    link: '#',
+    github: '#',
+    image: '/projects/svgl.webp',
+    tags: [TAGS.NEXTJS, TAGS.TAILWIND]
+  }
+]
+---
+
+{
+  PROJECTS.map(({ title, description, tags, link, github, image }) => (
+    <article>
+      <h3 class='text-2xl font-semibold text-yellow-200 mb-2'>{title}</h3>
+      <p class='text-lg mb-4 text-pretty'>{description}</p>
+      <ul class='flex flex-row gap-x-2 mb-4'>
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+            >
+              <tag.icon class='size-4' />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class='rounded shadow-2xl shadow-white/10 mb-4'
+        src={image}
+        alt={`Captura de pantalla del proyecto ${image}`}
+      />
+    </article>
+  ))
+}

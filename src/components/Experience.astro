@@ -1,0 +1,37 @@
+---
+import ExperienceItem from '../components/ExperienceItem.astro'
+
+const EXPERIENCE = [
+  {
+    date: 'March 2023',
+    title: 'Full Stack Developer - MERN Stack',
+    description:
+      'Developed a complete e-commerce platform using React, Node.js, Express, and MongoDB. Integrated payment gateways and implemented user authentication and role-based access control.',
+    link: '#'
+  },
+  {
+    date: 'June 2021',
+    title: 'Backend Development with Python and Django',
+    description:
+      'Built and deployed REST APIs for a CRM system using Django and Django REST Framework. Optimized database queries and implemented caching to improve performance.',
+    link: '#'
+  },
+  {
+    date: 'September 2020',
+    title: 'Mobile App Development - Flutter',
+    description:
+      'Designed and developed a cross-platform mobile app for task management using Flutter. Integrated Firebase for real-time database synchronization and user authentication.',
+    link: '#'
+  }
+]
+---
+
+<ol class='relative border-s border-gray-200 ml-3'>
+  {
+    EXPERIENCE.map((experience) => (
+      <li class='mb-10 ms-4'>
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
