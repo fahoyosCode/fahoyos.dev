@@ -7,14 +7,6 @@ import Firebase from '../icons/Firebase.astro'
 import NextJS from '../icons/NextJS.astro'
 import Tailwind from '../icons/Tailwind.astro'
 
-interface Props {
-  title: string
-  description: string
-  link?: string
-  github?: string
-  image?: string
-}
-
 const TAGS = {
   REACT: {
     name: 'ReactJS',
@@ -87,8 +79,8 @@ const PROJECTS = [
 {
   PROJECTS.map(({ title, description, tags, link, github, image }) => (
     <article>
-      <h3 class='text-2xl font-semibold text-yellow-200 mb-2'>{title}</h3>
-      <p class='text-lg mb-4 text-pretty'>{description}</p>
+      <h3 class='text-2xl font-semibold text-[#FFD700] mb-2'>{title}</h3>
+      <p class='mb-4 text-pretty text-[#AAB7C4] text-base'>{description}</p>
       <ul class='flex flex-row gap-x-2 mb-4'>
         {tags.map((tag) => (
           <li>
@@ -102,7 +94,7 @@ const PROJECTS = [
         ))}
       </ul>
       <img
-        class='rounded shadow-2xl shadow-white/10 mb-4'
+        class='rounded shadow-2xl shadow-[#1C1C1E] mb-4'
         src={image}
         alt={`Captura de pantalla del proyecto ${image}`}
       />

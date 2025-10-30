@@ -5,7 +5,9 @@ import Hero from '../sections/Hero.astro'
 import SectionContainer from '../components/SectionContainer.astro'
 import BriefCase from '../icons/BriefCase.astro'
 import Code from '../icons/Code.astro'
+import User from '../icons/User.astro'
 import Projects from '../sections/Projects.astro'
+import AboutMe from '../sections/AboutMe.astro'
 ---
 
 <Layout
@@ -23,12 +25,19 @@ import Projects from '../sections/Projects.astro'
       </h2>
       <Experience />
     </SectionContainer>
-    <SectionContainer>
+    <SectionContainer id='proyectos' class='pb-24'>
       <h2 class='text-2xl font-semibold mb-6 flex gap-x-3 items-center'>
         <Code class='size-8' />
         Proyectos
       </h2>
       <Projects />
+    </SectionContainer>
+    <SectionContainer id='sobre-mi' class='pb-24'>
+      <h2 class='text-2xl font-semibold mb-6 flex gap-x-3 items-center'>
+        <User class='size-7' />
+        Sobre mí
+      </h2>
+      <AboutMe />
     </SectionContainer>
   </main>
 </Layout>
